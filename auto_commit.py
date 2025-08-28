@@ -17,9 +17,10 @@ def auto_commit():
     f = open("./count.txt", 'a', encoding="utf8")
     f.write(" ")
     
-    os.system("git add count.txt")
+    os.system("git add .")
     os.system("git commit -m \"This is an automated commit.\"")
     os.system("git push origin main")
+    os.system("git push origin master")
     
     n+=1
     save_count(n)
@@ -28,4 +29,4 @@ def auto_commit():
 while True:
     auto_commit()
     print(f"Loop {read_count()}")
-    time.sleep(24/60/60)
+    time.sleep(24*60*60)
